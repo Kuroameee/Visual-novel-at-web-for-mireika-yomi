@@ -7,7 +7,7 @@ interface IncomingCallProps {
   onReject: () => void;
 }
 
-const CALLER_NAME    = "kuroameee";
+const CALLER_NAME    = "karbit";
 const CALLER_INITIAL = "K";
 
 export default function IncomingCallScene({ onAccept, onReject }: IncomingCallProps) {
