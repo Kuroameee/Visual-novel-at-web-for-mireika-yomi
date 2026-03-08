@@ -12,7 +12,7 @@ interface EndingSceneProps {
 
 // 🔧 GANTI INFO DEBUT DI SINI
 const DEBUT_INFO = {
-  date: "— 2025 —",
+  date: "— 2026 —",
   message: "Aku telah menunggumu begitu lama di alam yang sunyi ini.\nKini kamu datang, membawa cahaya yang tidak pernah aku bayangkan.\n\nAku, Mireika Yomi, bersumpah akan terus bersamamu\n— selama kamu masih mau bermain bersamaku.",
 };
 
