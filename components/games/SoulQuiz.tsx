@@ -36,7 +36,7 @@ const questions: Question[] = [
   },
   {
     q: "Apa yang ada di kepala Mireika?",
-    options: ["banddo tengkorak", "Paku tengkorak", "Topi sihir", "Bunga hitam"],
+    options: ["bando tengkorak", "Paku tengkorak", "Topi sihir", "Bunga hitam"],
     correct: 1,
     reaction: "Ini adalah bagian dariku. Tanda dari alam tempatku berasal.",
   },
