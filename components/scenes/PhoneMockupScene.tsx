@@ -3,17 +3,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import ParticleCanvas from "@/components/ui/ParticleCanvas";
 
-const CONTACT_NAME    = "kuroameee";
+const CONTACT_NAME    = "karbit";
 const CONTACT_INITIAL = "K";
 
 const CHAT_MESSAGES = [
   { from: "them", text: "Aku udah nungguin momen ini dari lama banget 😭✨", delay: 900 },
-  { from: "me",   text: "Kuro..? kamu di sini juga?", delay: 1400 },
-  { from: "them", text: "Tentu dong! Aku yang paling semangat soalnya wkwk", delay: 1100 },
+  { from: "me",   text: "kamu saha? ", delay: 1400 },
+  { from: "them", text: "Rahasia dong! Aku yang paling semangat soalnya wkwk", delay: 1100 },
   { from: "them", text: "Semoga perjalananmu di sini menyenangkan ya 🌑", delay: 1300 },
   { from: "them", text: "Kamu nggak sendirian lagi sekarang 💙", delay: 1500 },
-  { from: "me",   text: "..makasih, Kuro.", delay: 2000 },
-  { from: "me",   text: "ini artinya banyak banget buat aku 🥹", delay: 1200 },
+  { from: "me",   text: "..makasih, siapapun kamu.", delay: 2000 },
 ] as const;
 
 interface PhoneMockupSceneProps { onComplete: () => void; }
