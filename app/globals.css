@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&display=swap');
+
+/* Blood Victim Zombie — taruh file di public/assets/fonts/BloodVictimZombie.ttf */
+@font-face {
+  font-family: 'BloodVictimZombie';
+  src: url('/assets/fonts/BloodVictimZombie.ttf') format('truetype'),
+       url('/assets/fonts/BloodVictimZombie.woff2') format('woff2'),
+       url('/assets/fonts/BloodVictimZombie.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --void: #04040a;
+  --void-deep: #07071a;
+  --teal-glow: #00e5c8;
+  --teal-soft: #0ab8a8;
+  --teal-dim: #0a6b65;
+  --spirit-light: #c8f0f0;
+  --soul-purple: #1a0a2e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--void);
+  color: var(--spirit-light);
+  cursor: none;
+}
+
+/* Ghost cursor — semua elemen sembunyikan cursor default */
+*, *::before, *::after { cursor: none !important; }
+
+/* Scrollbar */
+::-webkit-scrollbar { display: none; }
+
+/* Text glow effects */
+.text-glow {
+  text-shadow: 0 0 10px var(--teal-glow), 0 0 30px rgba(0, 229, 200, 0.5);
+}
+
+.text-glow-soft {
+  text-shadow: 0 0 15px rgba(0, 229, 200, 0.4);
+}
+
+.text-glow-strong {
+  text-shadow: 0 0 10px var(--teal-glow), 0 0 30px var(--teal-glow), 0 0 60px rgba(0, 229, 200, 0.5);
+}
+
+/* Box glow */
+.glow-border {
+  box-shadow: 0 0 15px rgba(0, 229, 200, 0.3), inset 0 0 15px rgba(0, 229, 200, 0.05);
+  border: 1px solid rgba(0, 229, 200, 0.3);
+}
+
+.glow-border-strong {
+  box-shadow: 0 0 25px rgba(0, 229, 200, 0.5), inset 0 0 25px rgba(0, 229, 200, 0.08);
+  border: 1px solid rgba(0, 229, 200, 0.6);
+}
+
+/* Particle animation */
+@keyframes particleRise {
+  0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.8; }
+  50% { opacity: 0.6; }
+  100% { transform: translateY(-150px) translateX(var(--drift, 30px)) scale(0.3); opacity: 0; }
+}
+
+@keyframes floatGhost {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-15px) rotate(3deg); }
+  75% { transform: translateY(-8px) rotate(-3deg); }
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.03); opacity: 1; }
+}
+
+@keyframes scanLine {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes typeIn {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glitchText {
+  0%, 100% { clip-path: none; transform: none; }
+  20% { clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%); transform: translateX(-3px); }
+  40% { clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%); transform: translateX(3px); }
+  60% { clip-path: none; transform: none; }
+}
+
+@keyframes shimmerMove {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes ripple {
+  0% { transform: scale(0); opacity: 0.8; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+@keyframes fogFloat {
+  0%, 100% { opacity: 0.3; transform: translateX(0) scaleX(1); }
+  50% { opacity: 0.5; transform: translateX(5%) scaleX(1.05); }
+}
+
+@keyframes chaserPulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(200, 0, 50, 0.5); }
+  50% { box-shadow: 0 0 30px rgba(200, 0, 50, 0.9), 0 0 60px rgba(200, 0, 50, 0.4); }
+}
+
+@keyframes runBob {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-4px) rotate(-3deg); }
+  75% { transform: translateY(-2px) rotate(3deg); }
+}
+
+@keyframes countdownPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Game specific */
+.fragment-glow {
+  filter: drop-shadow(0 0 8px var(--teal-glow)) drop-shadow(0 0 15px rgba(0, 229, 200, 0.5));
+  animation: fragmentPulse 2s ease-in-out infinite;
+}
+
+@keyframes fragmentPulse {
+  0%, 100% { filter: drop-shadow(0 0 8px var(--teal-glow)); transform: scale(1); }
+  50% { filter: drop-shadow(0 0 20px var(--teal-glow)) drop-shadow(0 0 40px rgba(0, 229, 200, 0.6)); transform: scale(1.1); }
+}
+
+.soul-card {
+  background: linear-gradient(135deg, rgba(26, 10, 46, 0.8) 0%, rgba(4, 4, 10, 0.9) 100%);
+  border: 1px solid rgba(0, 229, 200, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.soul-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 229, 200, 0.08), transparent);
+  transition: left 0.4s ease;
+}
+
+.soul-card:hover::before {
+  left: 100%;
+}
+
+.soul-card:hover {
+  border-color: rgba(0, 229, 200, 0.6);
+  box-shadow: 0 0 20px rgba(0, 229, 200, 0.2);
+  transform: translateY(-2px);
+}
+
+.vn-text-box {
+  background: linear-gradient(180deg, rgba(4, 4, 10, 0.1) 0%, rgba(4, 4, 10, 0.85) 30%);
+  backdrop-filter: blur(4px);
+}
+
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+.scan-line {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 229, 200, 0.04), transparent);
+  animation: scanLine 8s linear infinite;
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* Typewriter cursor */
+.typewriter-cursor::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  color: var(--teal-glow);
+  margin-left: 2px;
+}
+
+/* Button styles */
+.btn-spirit {
+  position: relative;
+  background: transparent;
+  border: 1px solid rgba(0, 229, 200, 0.4);
+  color: var(--spirit-light);
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.2em;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: none;
+}
+
+.btn-spirit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 229, 200, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn-spirit:hover::before { opacity: 1; }
+.btn-spirit:hover {
+  border-color: var(--teal-glow);
+  box-shadow: 0 0 20px rgba(0, 229, 200, 0.3);
+  color: var(--teal-glow);
+}
+
+.btn-spirit:active {
+  transform: scale(0.97);
+}
+
+/* Progress bar */
+.soul-progress {
+  background: linear-gradient(90deg, var(--teal-dim), var(--teal-glow));
+  box-shadow: 0 0 10px var(--teal-glow);
+  transition: width 0.5s ease;
+}
+
+/* Forest silhouette layers */
+.forest-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+/* Vignette */
+.vignette {
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(4, 4, 10, 0.7) 100%);
+}
+
+/* Score display */
+.score-glow {
+  text-shadow: 0 0 10px var(--teal-glow);
+  font-family: 'Cinzel', serif;
+}
+
+/* ── Global: no text selection anywhere ── */
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
