@@ -49,7 +49,7 @@ function makeDots(): Set<string> {
 const PLAYER_START: [number,number] = [7, 9];
 const GHOST_STARTS: [number,number][] = [[1,1],[1,17],[13,1],[13,17]];
 
-const GAME_TIME      = 60;
+const GAME_TIME      = 180;
 const PLAYER_SPEED   = 5.5;   // cells/sec
 const GHOST_SPEED    = 2.2;   // normal cruise speed
 const GHOST_SPEED_CHASE = 4.2; // speed when near player — aggressive!
