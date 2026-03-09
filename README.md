@@ -49,19 +49,6 @@ Taruh semua aset di folder `public/assets/`:
 
 ## ✏️ Konfigurasi
 
-### Ganti info debut di `components/scenes/EndingScene.tsx`:
-
-```typescript
-const DEBUT_INFO = {
-  date: "12 Desember 2025",    // tanggal debut
-  time: "20:00 WIB",           // jam debut
-  message: "...",              // pesan dari Mireika
-  twitterUrl: "https://twitter.com/MireikaYomi",
-  youtubeUrl: "https://youtube.com/@MireikaYomi",
-  tiktokUrl:  "https://tiktok.com/@MireikaYomi",
-};
-```
-
 ### Ganti pertanyaan quiz di `components/games/SoulQuiz.tsx`:
 Edit array `questions` untuk menyesuaikan dengan lore karakter.
 
